@@ -1,11 +1,10 @@
-import CounterClass from './components/CounterClass';
-import CounterFunction from './components/CounterFunction';
+import Header from "./components/Header";
+
 
 function App() {
   return (
-    <div className="App">
-      <CounterClass/>
-      <CounterFunction/>
+    <div>
+      <Header/>
     </div>
   );
 }
