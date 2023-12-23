@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import axios from "axios";
 
 export default function AddStudent(){
 
@@ -6,9 +7,26 @@ export default function AddStudent(){
     const [age, setage] = useState("");
     const [gender, setgender] = useState("");
 
+    function sendData(e){
+        e.preventDefault();
+        alert("inserted");
+
+        const newStudent={
+            name,age,gender
+        }
+
+        console.log(newStudent);
+
+        axios.post("http://localhost:3000/student/add",newStudent).then(()=>{
+            alert("Student aded")
+        }).catch((err)=>{
+            alert(err)
+        })
+    }
+
     return(
         <div className="container">
-            <form>
+            <form onSubmit={sendData}>
                 <div class="form-group">
                     <label for="name">Student Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
